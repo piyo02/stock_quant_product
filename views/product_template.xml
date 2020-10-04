@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_template_stock_form_view">
+            <field name="name">product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[2]//group[@name='inventory']//group[@name='stock_property']" position="after">
+                    <div>
+                        <group>
+                            <field name="type_rule_store"/>
+                            <field name="stock_min_in_store"/>
+                            <field name="stock_max_in_store"/>
+                        </group>
+                        <group>
+                            <field name="stock_min_in_warehouse"/>
+                            <field name="stock_max_in_warehouse"/>
+                        </group>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
